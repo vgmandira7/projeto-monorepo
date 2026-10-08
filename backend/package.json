@@ -61,8 +61,12 @@
     "swagger-ui-express": "^5.0.1"
   },
   "pnpm": {
-    "ignoredBuiltDependencies": [
-      "@scarf/scarf"
-    ]
+      "ignoredBuiltDependencies": [
+        "@scarf/scarf"
+      ],
+      "onlyBuiltDependencies": [
+        "esbuild",
+        "sqlite3"
+      ]
   }
 }
