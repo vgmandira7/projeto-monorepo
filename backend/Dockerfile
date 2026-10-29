@@ -3,13 +3,14 @@
 # ==============================================================================
 FROM node:22-alpine AS builder
 
-# Instalação do pnpm globalmente
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# Habilita o corepack (a versão do pnpm vem do campo "packageManager" do package.json)
+RUN corepack enable
 
 WORKDIR /app
 
 # Copia dos manifestos de dependências do backend
-COPY package.json pnpm-lock.yaml* ./
+# O pnpm-workspace.yaml contém o allowBuilds (esbuild, sqlite3, @scarf/scarf)
+COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml ./
 
 # Instalação de todas as dependências (incluindo devDependencies para o build)
 RUN pnpm install --frozen-lockfile
