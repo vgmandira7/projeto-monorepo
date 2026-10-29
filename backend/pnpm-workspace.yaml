@@ -3,6 +3,6 @@ packages:
   - 'app'
 
 allowBuilds:
-  sqlite3: true
   esbuild: true
+  sqlite3: true
   '@scarf/scarf': false
