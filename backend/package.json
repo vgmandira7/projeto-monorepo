@@ -1,8 +1,10 @@
+
 {
   "name": "backend",
   "version": "1.0.0",
   "description": "",
   "main": "dist/server.js",
+  "packageManager": "pnpm@11.21.0",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
@@ -23,7 +25,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^11.20.0",
+      "version": "11.21.0",
       "onFail": "download"
     }
   },
